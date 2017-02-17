@@ -1,0 +1,19 @@
+var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 100, 112, 113] ;
+
+function myAnswer(myarray, index) {
+   if (index === undefined) {
+index = 0;
+return myAnswer(myarray,index);
+}
+if (index === myarray.length){
+
+return myarray;
+}
+if (myarray[index] % 2 !== 0) {
+myarray.splice(index,1);
+return myAnswer(myarray, index);
+}
+return myAnswer(myarray, index+1);
+}
+
+document.writeln((myAnswer(numbers)));
